@@ -1,9 +1,14 @@
-# Description
----
- tasks:
-  - name: Create resource group
-    azure_rm_resourcegroup:
-      name: "{{ resource_group_name }}"
-      location: "{{ location }}"
+
+- name: Create VM with defaults
+  azure_rm_virtualmachine:
+    resource_group: myResourceGroup
+    name: testvm10
+    admin_username: chouseknecht
+    admin_password: Password@123
+    image:
+      offer: CentOS
+      publisher: OpenLogic
+      sku: '7.1'
+      version: latest
 
   
